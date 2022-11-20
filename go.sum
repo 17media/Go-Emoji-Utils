@@ -1,5 +1,3 @@
-github.com/17media/Go-Emoji-Utils v1.1.2 h1:O/IKGCdD0gVtS5ltXEoNxTfPWSSVCwOS7k63aoTgQK8=
-github.com/17media/Go-Emoji-Utils v1.1.2/go.mod h1:1yh6F3XG45kdYgsYfmI3r/ViVErcohxh2iWbE/L4y4c=
 github.com/PuerkitoBio/goquery v1.8.0 h1:PJTF7AmFCFKk1N6V6jmKfrNH9tV5pNE6lZMkG0gta/U=
 github.com/PuerkitoBio/goquery v1.8.0/go.mod h1:ypIiRMtY7COPGk+I/YbZLbxsxn9g5ejnI2HSMtkjZvI=
 github.com/andybalholm/cascadia v1.3.1 h1:nhxRkql1kdYCc8Snf7D5/D3spOX+dBgjA6u8x004T2c=
