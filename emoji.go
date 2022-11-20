@@ -23,6 +23,7 @@ type Emoji struct {
 func init() {
 	// Work out where we are in relation to the caller
 	_, filename, _, ok := runtime.Caller(0)
+	fmt.Println(filename)
 	if !ok {
 		panic("No caller information")
 	}
@@ -38,9 +39,9 @@ func init() {
 
 	byteValue, e := ioutil.ReadAll(jsonFile)
 	if e != nil {
-		if len(Emojis) > 0 { // Use build-in emojis data (from emojidata.go)
-			return
-		}
+		//if len(Emojis) > 0 { // Use build-in emojis data (from emojidata.go)
+		//	return
+		//}
 		panic(e)
 	}
 
@@ -54,6 +55,7 @@ func init() {
 func LookupEmoji(emojiString string) (emoji Emoji, err error) {
 
 	hexKey := utils.StringToHexKey(emojiString)
+	fmt.Println(emojiString, hexKey)
 
 	// If we have a definition for this string we'll return it,
 	// else we'll return an error
