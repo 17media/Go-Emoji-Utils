@@ -28,6 +28,10 @@ func init() {
 		panic("No caller information")
 	}
 
+	fmt.Println("=========")
+	fmt.Println(filename)
+	fmt.Println(path.Dir(filename))
+	fmt.Println("=========")
 	// Open the Emoji definition JSON and Unmarshal into map
 	jsonFile, err := os.Open(path.Dir(filename) + "/data/emoji.json")
 	if jsonFile != nil {
@@ -37,9 +41,6 @@ func init() {
 		fmt.Println(err)
 	}
 
-	fmt.Println("=========")
-	fmt.Println(jsonFile)
-	fmt.Println("=========")
 	byteValue, e := ioutil.ReadAll(jsonFile)
 	if e != nil {
 		//if len(Emojis) > 0 { // Use build-in emojis data (from emojidata.go)
