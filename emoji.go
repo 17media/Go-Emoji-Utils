@@ -5,11 +5,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"path"
-	"runtime"
 	"strings"
 
-	"github.com/tmdvs/Go-Emoji-Utils/utils"
+	"github.com/17media/Go-Emoji-Utils/utils"
 )
 
 // Emoji - Struct representing Emoji
@@ -21,14 +19,8 @@ type Emoji struct {
 
 // Unmarshal the emoji JSON into the Emojis map
 func init() {
-	// Work out where we are in relation to the caller
-	_, filename, _, ok := runtime.Caller(0)
-	if !ok {
-		panic("No caller information")
-	}
-
 	// Open the Emoji definition JSON and Unmarshal into map
-	jsonFile, err := os.Open(path.Dir(filename) + "/data/emoji.json")
+	jsonFile, err := os.Open("/data/emoji.json")
 	if jsonFile != nil {
 		defer jsonFile.Close()
 	}
@@ -38,9 +30,6 @@ func init() {
 
 	byteValue, e := ioutil.ReadAll(jsonFile)
 	if e != nil {
-		if len(Emojis) > 0 { // Use build-in emojis data (from emojidata.go)
-			return
-		}
 		panic(e)
 	}
 
