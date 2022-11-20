@@ -37,6 +37,9 @@ func init() {
 		fmt.Println(err)
 	}
 
+	fmt.Println("=========")
+	fmt.Println(jsonFile)
+	fmt.Println("=========")
 	byteValue, e := ioutil.ReadAll(jsonFile)
 	if e != nil {
 		//if len(Emojis) > 0 { // Use build-in emojis data (from emojidata.go)
